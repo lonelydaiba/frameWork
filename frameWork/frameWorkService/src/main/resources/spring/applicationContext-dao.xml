@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<description>Spring-DAO 公共配置</description>
+
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="initialSize" value="3" /><!-- 初始连接数 -->
+		<property name="maxTotal" value="50" /><!-- 最大活动连接数 -->
+		<property name="maxIdle" value="20" /><!-- 最大空闲连接数 -->
+		<property name="minIdle" value="5" /><!-- 最小空闲连接数 -->
+		<property name="maxWaitMillis" value="60000" /><!-- 从连接池获取一个连接时，最大的等待时间 -->
+		<property name="validationQuery" value="select 1" /><!-- 确认查询SQL -->
+		<property name="timeBetweenEvictionRunsMillis" value="60000" /><!-- 
+			空闲对象驱逐线程运行时的休眠毫秒数 -->
+		<property name="minEvictableIdleTimeMillis" value="300000" /><!-- 
+			空闲的连接最低要待N毫秒后，才会被释放 -->
+		<property name="testWhileIdle" value="true" /><!-- 连接空闲时，验证有效性 -->
+		<property name="testOnBorrow" value="true" /><!-- 从连接池获取一个连接时，验证有效性 -->
+		<property name="testOnReturn" value="false" /><!-- 连接被归还到连接池时，验证有效性 -->
+		<property name="removeAbandonedOnBorrow" value="true" />
+		<!-- 数据库连接过多长时间不用将被视为被遗弃而收回连接池中 -->
+		<property name="removeAbandonedTimeout" value="300" /><!-- 一个被抛弃连接可以被移除的超时时间，单位为秒 -->
+	</bean>
+
+	<!-- 将所有的实体类交给spring,mapperLocations 扫描dao的sql的xml文件 -->
+	<bean id="dispatchSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	    <property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml" />
+		<property name="mapperLocations">
+			<list>
+				<value>classpath:mybatis/mapper/*.xml</value>
+			</list>
+		</property>
+		<property name="dataSource" ref="dataSource" />
+		<property name="typeAliasesPackage" value="tf56.magiccube.domain" />
+	</bean>
+
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="tf56.magiccube.dao" />
+		<property name="sqlSessionFactoryBeanName" value="dispatchSessionFactory"></property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="transactionTemplate"
+		class="org.springframework.transaction.support.TransactionTemplate">
+		<property name="transactionManager" ref="transactionManager" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+</beans>
