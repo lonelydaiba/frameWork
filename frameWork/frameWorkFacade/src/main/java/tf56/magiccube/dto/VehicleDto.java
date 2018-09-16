@@ -19,6 +19,7 @@ public class VehicleDto implements Serializable {
 	/**
 	 * 车辆Id
 	 */
+
 	@ApiModelProperty("车辆Id")
 	private String vehicleId;
 	
