@@ -1,4 +1,4 @@
-package tf56.magiccubeapi.util.dubbo;
+package daily.frameworkapi.util.dubbo;
 
 import java.util.HashMap;
 
@@ -16,9 +16,7 @@ import com.alibaba.fastjson.JSON;
 
 /**
  * dubbo打点过滤器，用于记录消费者访问提供者服务时的相关信息
- * 
- * @author zhuhanbing 
- * @author da.dong
+ *
  */
 @Activate(group = Constants.CONSUMER)
 public class InterfaceLogDubboFilter implements Filter {

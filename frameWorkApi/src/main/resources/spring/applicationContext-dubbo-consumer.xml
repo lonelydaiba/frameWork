@@ -13,7 +13,7 @@
     <dubbo:registry address="${dubbo.registry.address}" />
     <dubbo:consumer filter="exceptionFilter,interfaceLogDubboFilter" check="${dubbo.consumer.check}" />
     <!-- <dubbo:reference id="addressDubboService" group="${dubbo.reference.group.common}" version="${dubbo.reference.version.common}" interface="tf56.lujinggis.service.AddressDubboService" timeout="8000" retries="0" /> -->
-    <!-- app管理 -->
-    <dubbo:reference id="magicCubeVehicleFacadeService" interface="tf56.magiccube.service.MagicCubeVehicleFacadeService" group="${dubbo.reference.group.common}" version="${dubbo.reference.version.common}" timeout="8000" retries="0" />
+
+    <dubbo:reference id="vehicleFacadeService" interface="daily.framework.service.VehicleFacadeService" group="${dubbo.reference.group.common}" version="${dubbo.reference.version.common}" timeout="8000" retries="0" />
 </beans>
 

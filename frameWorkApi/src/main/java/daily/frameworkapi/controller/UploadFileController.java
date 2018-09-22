@@ -1,4 +1,4 @@
-package tf56.magiccubeapi.controller;
+package daily.frameworkapi.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -19,8 +19,8 @@ import org.springframework.web.multipart.support.DefaultMultipartHttpServletRequ
 
 
 
-import tf56.magiccube.response.model.ResultModel;
-import tf56.magiccubeapi.service.UploadFileService;
+import daily.framework.response.model.ResultModel;
+import daily.frameworkapi.service.UploadFileService;
 
 
 @Api(tags = "文件上传控制器")

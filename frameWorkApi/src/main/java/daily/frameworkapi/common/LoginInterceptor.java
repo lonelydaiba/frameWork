@@ -1,4 +1,4 @@
-package tf56.magiccubeapi.common;
+package daily.frameworkapi.common;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,8 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * 登录过滤器，使用spring这一套，方面使用spring的特性。 免登陆的接口可以用xml中配置： <br>
  * <strong>mvc:exclude-mapping</strong>
- * 
- * @author da.dong
+ *
  */
 public class LoginInterceptor implements HandlerInterceptor{
 

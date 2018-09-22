@@ -1,3 +1,3 @@
-visitLogDubboFilter=tf56.magiccubeapi.util.dubbo.VisitLogDubboFilter
-exceptionFilter=tf56.magiccubeapi.util.dubbo.DubboExceptionFilter
-interfaceLogDubboFilter=tf56.magiccubeapi.util.dubbo.InterfaceLogDubboFilter
+visitLogDubboFilter=VisitLogDubboFilter
+exceptionFilter=DubboExceptionFilter
+interfaceLogDubboFilter=InterfaceLogDubboFilter

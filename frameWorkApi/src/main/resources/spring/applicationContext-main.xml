@@ -18,7 +18,7 @@
 	<description>Spring公共配置 </description>
 	
 	<!-- 使用annotation 自动注册bean,并保证@Required,@Autowired的属性被注入 这个是servuce的部分-->
-	<context:component-scan base-package="tf56.magiccubeapi" />
+	<context:component-scan base-package="daily.frameworkapi" />
 	<bean id="taskExecutor"
 		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
 		<property name="corePoolSize" value="20" />
@@ -38,7 +38,7 @@
 		<property name="mappingFiles" value="classpath:dozer/mapping.xml" />
 	</bean>
     
-    <bean name="dozerBeanMapperWrapper" class="tf56.magiccubeapi.util.DozerBeanMapperWrapper">
+    <bean name="dozerBeanMapperWrapper" class="daily.frameworkapi.util.DozerBeanMapperWrapper">
         <property name="dozerBeanMapper" ref="dozerBeanMapper" />
     </bean>
 </beans>

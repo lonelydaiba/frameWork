@@ -1,4 +1,4 @@
-package tf56.magiccubeapi.util.dubbo;
+package daily.frameworkapi.util.dubbo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,14 +13,12 @@ import com.alibaba.dubbo.rpc.Result;
 import com.alibaba.dubbo.rpc.RpcException;
 import com.alibaba.dubbo.rpc.RpcResult;
 import com.alibaba.fastjson.JSON;
-import tf56.magiccube.exception.ParameterException;
-import tf56.magiccube.exception.ServiceException;
+import daily.framework.exception.ParameterException;
+import daily.framework.exception.ServiceException;
 
 /**
  * Service 层对外暴露的异常统一处理
- * 
- * @author dongda
- * @author zhuhanbing 
+ *
  */
 @Activate(group = {Constants.PROVIDER, Constants.CONSUMER})
 public class DubboExceptionFilter implements Filter {
@@ -39,21 +37,21 @@ public class DubboExceptionFilter implements Filter {
             String url = serviceName + "." + methodName;
             Object[] params = invocation.getArguments();
 
-            tf56.magiccube.util.dubbo.Result<Object> resultToReturn = null;
+            daily.framework.util.dubbo.Result<Object> resultToReturn = null;
             
             Throwable ex = result.getException();
             if (ex instanceof ParameterException) {
                 LOGGER.error(url + " >>>>>params=" + JSON.toJSONString(params)
                              + System.getProperty("line.separator") + ex.getMessage());
-                resultToReturn = new tf56.magiccube.util.dubbo.Result<Object>("error", "500", ex.getMessage(), "", "");
+                resultToReturn = new daily.framework.util.dubbo.Result<Object>("error", "500", ex.getMessage(), "", "");
             } else if (ex instanceof ServiceException) {
                 LOGGER.error(url + " >>>>>params=" + JSON.toJSONString(params)
                              + System.getProperty("line.separator") + ex.getMessage());
                 ServiceException se = (ServiceException) ex;
-                resultToReturn = new tf56.magiccube.util.dubbo.Result<Object>("error", se.getCode(), ex.getMessage(), "", "");
+                resultToReturn = new daily.framework.util.dubbo.Result<Object>("error", se.getCode(), ex.getMessage(), "", "");
             } else {
                 LOGGER.error(url + " >>>>>params=" + JSON.toJSONString(params), ex);
-                resultToReturn = new tf56.magiccube.util.dubbo.Result<Object>("error", "500", "服务器异常", "", "");
+                resultToReturn = new daily.framework.util.dubbo.Result<Object>("error", "500", "服务器异常", "", "");
             }
             result = new RpcResult(resultToReturn);
         }

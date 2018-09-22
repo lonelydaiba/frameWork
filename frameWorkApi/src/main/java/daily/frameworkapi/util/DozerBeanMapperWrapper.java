@@ -1,4 +1,4 @@
-package tf56.magiccubeapi.util;
+package daily.frameworkapi.util;
 
 import java.util.ArrayList;
 import java.util.List;

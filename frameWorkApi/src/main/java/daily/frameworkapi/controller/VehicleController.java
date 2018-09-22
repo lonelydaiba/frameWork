@@ -1,31 +1,31 @@
-package tf56.magiccubeapi.controller;
+package daily.frameworkapi.controller;
 
 import java.util.List;
 
 import javax.validation.Valid;
 
+import daily.framework.query.VehicleListQuery;
+import daily.framework.dto.VehicleDto;
+import daily.framework.response.model.ResultModel;
+import daily.framework.util.ValidateUtils;
+import daily.frameworkapi.service.VehicleService;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import tf56.magiccube.dto.VehicleDto;
-import tf56.magiccube.query.MagicCubeVehicleListQuery;
-import tf56.magiccube.response.model.ResultModel;
-import tf56.magiccube.util.ValidateUtils;
-import tf56.magiccubeapi.service.MagicCubeVehicleService;
+
 
 @RestController
 @RequestMapping("/vehicle")
 @Api(tags = "车辆相关接口")
-public class MagicCubeVehicleController {
+public class VehicleController {
 	
 	@Autowired
-	private MagicCubeVehicleService magicCubeVehicleService;
+	private VehicleService vehicleService;
 	
 
     /**
@@ -36,8 +36,8 @@ public class MagicCubeVehicleController {
 	@ResponseBody
 	@RequestMapping(value = "/listVehicles", method = RequestMethod.GET)
     @ApiOperation(value = "查询车辆列表", notes = "查询车辆列表")
-    public ResultModel<List<VehicleDto>> listVehicles(@ModelAttribute @Valid MagicCubeVehicleListQuery query) {
-    	return magicCubeVehicleService.getMagicCubeVehicleList(query);
+    public ResultModel<List<VehicleDto>> listVehicles(@ModelAttribute @Valid VehicleListQuery query) {
+    	return vehicleService.getMagicCubeVehicleList(query);
     }
 
 
@@ -47,7 +47,7 @@ public class MagicCubeVehicleController {
 	public ResultModel<String> insertVehicles(@ModelAttribute @Valid VehicleDto vehicleDto,BindingResult result)
 	     throws Exception {
 		ValidateUtils.validParams(result);
-		return magicCubeVehicleService.createVehicle(vehicleDto);
+		return vehicleService.createVehicle(vehicleDto);
 	}
 
 	

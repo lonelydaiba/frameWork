@@ -1,4 +1,4 @@
-package tf56.magiccubeapi.util;
+package daily.frameworkapi.util;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -14,14 +14,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
 
-import tf56.magiccube.exception.MagicCubeException;
-import tf56.magiccube.exception.ServiceException;
-import tf56.magiccube.exception.ValidException;
-import tf56.magiccube.response.model.ResultModel;
+import daily.framework.exception.FrameWorkException;
+import daily.framework.exception.ServiceException;
+import daily.framework.exception.ValidException;
+import daily.framework.response.model.ResultModel;
 
 /**
  * 全局异常处理器,处理新增的异常，对于有特殊逻辑的返回直接定义个新方法，参考ServiceException
- * @author da.dong
  */
 @ControllerAdvice
 @Component
@@ -31,10 +30,10 @@ public class GlobalExceptionHandler {
 	private final static Logger LOGGER = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     /**
-     * 魔方异常处理
+     * 异常处理
      */
-    @ExceptionHandler(MagicCubeException.class)
-    public ResultModel<String> handlerMagicCubeException(MagicCubeException e) {
+    @ExceptionHandler(FrameWorkException.class)
+    public ResultModel<String> handlerMagicCubeException(FrameWorkException e) {
         String message = e.getErrorInfo();
         return new ResultModel<String>("error", "", "", e.getCode(), message);
     }

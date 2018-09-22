@@ -1,4 +1,4 @@
-package tf56.magiccubeapi.common;
+package daily.frameworkapi.common;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -15,13 +15,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Swagger 配置类
- * 
- * @author Jinpeng.Yang
+ *
  */
 @Configuration
 @EnableSwagger2
 @EnableWebMvc
-@ComponentScan("tf56.magiccubeapi.controller")
+@ComponentScan("daily.frameworkapi.controller")
 public class SwaggerConfig {
 
     @Bean
@@ -31,7 +30,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
 
-        ApiInfo apiInfo = new ApiInfoBuilder().title("运力魔方系统magiccubeApi接口文档").version("0.0.1").build();
+        ApiInfo apiInfo = new ApiInfoBuilder().title("demo frameWorkApi接口文档").version("0.0.1").build();
 
         return apiInfo;
     }

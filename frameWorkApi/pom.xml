@@ -45,7 +45,7 @@
                     <artifactId>servlet-api</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>	
+        </dependency>
 		<dependency>
 			<groupId>commons-httpclient</groupId>
 			<artifactId>commons-httpclient</artifactId>
@@ -240,11 +240,11 @@
 			<artifactId>frameWorkFacade</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
-		<dependency>
+<!--		<dependency>
         <groupId>tf56.fastdfs</groupId>
         <artifactId>fastdfs-client</artifactId>
         <version>1.0.6-SNAPSHOT</version>
-    	</dependency>
+    	</dependency>-->
     	<dependency>
         <groupId>commons-fileupload</groupId>
         <artifactId>commons-fileupload</artifactId>
@@ -292,7 +292,7 @@
 				<updatePolicy>always</updatePolicy>
 			</snapshots>
 			<id>central</id>
-			<url>http://central</url>
+			<url>https://repo.maven.apache.org/maven2/</url>
 		</repository>
 	</repositories>
 

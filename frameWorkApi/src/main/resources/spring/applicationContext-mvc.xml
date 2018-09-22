@@ -10,8 +10,8 @@
 
 	<description>Spring公共配置</description>
 
-	<context:component-scan base-package="tf56.magiccubeapi" />
-	
+	<context:component-scan base-package="daily.frameworkapi" />
+
     <bean id="fastJsonConfig" class="com.alibaba.fastjson.support.config.FastJsonConfig">
     </bean>
     

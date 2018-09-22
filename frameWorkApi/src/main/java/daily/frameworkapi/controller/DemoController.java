@@ -1,4 +1,4 @@
-package tf56.magiccubeapi.controller;
+package daily.frameworkapi.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
