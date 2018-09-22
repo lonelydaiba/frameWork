@@ -17,8 +17,8 @@
     <dubbo:protocol name="${dubbo.protocol.name}" port="${dubbo.protocol.port}" />
     
     <!-- <dubbo:service ref="testServiceFacade" interface="tf56.architecture.service.TestServiceFacade"  group="${dubbo.provider.group}"  version="${dubbo.provider.version}"/> -->
-	<!--app管理-->
-    <dubbo:service ref="magicCubeVehicleFacadeService" interface="tf56.magiccube.service.MagicCubeVehicleFacadeService" group="${dubbo.provider.group}" version="${dubbo.provider.version}"/>
+
+    <dubbo:service ref="vehicleFacadeService" interface="daily.framework.service.VehicleFacadeService" group="${dubbo.provider.group}" version="${dubbo.provider.version}"/>
 </beans>
 
 

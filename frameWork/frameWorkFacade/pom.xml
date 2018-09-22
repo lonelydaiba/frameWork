@@ -99,14 +99,14 @@
 		&lt;!&ndash; 快照版本 &ndash;&gt;
 		<snapshotRepository>
 			<id>public-snapshots</id>
-			<name>tf56 Repository</name>
-			<url>http://10.7.13.128:8081/nexus/content/repositories/snapshots/</url>
+			<name>daily Repository</name>
+			<url>http://192.0.0.1:8081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 		&lt;!&ndash; 发布版本 &ndash;&gt;
 		<repository>
 			<id>public-releases</id>
-			<name>tf56 Repository</name>
-			<url>http://10.7.13.128:8081/nexus/content/repositories/thirdparty/</url>
+			<name>daily Repository</name>
+			<url>http://192.0.0.1:8081/nexus/content/repositories/thirdparty/</url>
 		</repository>
 	</distributionManagement>-->
 </project>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="daily.framework.dao.VehicleDao" >
+	<resultMap id="vehicleFieldMap" type="daily.framework.domain.Vehicle">
+		<!--<result column="vehicle_vehicle_id" property="magicCubeVehicleId" jdbcType="BIGINT" />			&lt;!&ndash; 车辆ID &ndash;&gt;-->
+		<result column="vehicle_id" property="vehicleId" jdbcType="VARCHAR" />			<!-- 车辆编码 -->
+		<result column="vehicle_number" property="vehicleNumber" jdbcType="VARCHAR" />			<!-- 车牌号 -->
+		<result column="vehicle_number_type" property="vehicleNumberType" jdbcType="VARCHAR" />			<!-- 车牌号 -->
+		<result column="vehicle_type" property="vehicleType" jdbcType="VARCHAR" />			<!-- 车型 :0=厢车；1=高低板；2=平板；3=高栏；4=挂车；5=冷藏车 -->
+		<result column="vehicle_overall_length" property="vehicleOverallLength" jdbcType="DECIMAL" />			<!-- 车长（单位：米） 4.2、5.2、6.2、6.8、7.2、7.6、8.2、9.6、12.5、13.5、16.5、17.5 -->
+		<result column="app_id" property="appId" jdbcType="VARCHAR" />			<!-- 应用ID（所属应用ID,可包含多个） -->
+		<result column="can_weight" property="canWeight" jdbcType="DECIMAL" />			<!-- 额定载重，上限100吨（单位：吨） -->
+		<result column="can_volume" property="canVolume" jdbcType="DECIMAL" />			<!-- 额定体积（单位：立方米）上限1000立主米 -->
+		<result column="organization" property="organization" jdbcType="VARCHAR" />			<!-- 所属机构 -->
+		<result column="is_own" property="isOwn" jdbcType="TINYINT" />			<!-- 是否自有车辆  0：外部雇佣 1：自有 -->
+		<result column="production_date" property="productionDate" jdbcType="TIMESTAMP" />			<!-- 车辆出厂日期 -->
+		<result column="purchase_date" property="purchaseDate" jdbcType="TIMESTAMP" />			<!-- 车辆购入日期 -->
+		<result column="vehicle_use" property="vehicleUse" jdbcType="VARCHAR" />			<!-- 车辆用途  0:长途 1:短途 -->
+		<result column="org_id" property="orgId" jdbcType="VARCHAR" />			<!-- 组织Id -->
+		<result column="org_name" property="orgName" jdbcType="VARCHAR" />			<!-- 组织名称 -->
+		<result column="cooperation_model" property="cooperationModel" jdbcType="VARCHAR" /><!-- 合作模式 1：自有 2：合作 3：临调 -->
+		<result column="is_deleted" property="isDeleted" jdbcType="TINYINT" />			<!-- 是否删除0=未删除；1=已删除 -->
+		<result column="vehicle_status" property="vehicleStatus" jdbcType="VARCHAR" />			<!-- 车辆状态 -->
+		<result column="gmt_create" property="inputDate" jdbcType="TIMESTAMP" />			<!-- 记录插入时间 -->
+		<result column="create_operator_id" property="inputMan" jdbcType="VARCHAR" />			<!-- 记录插入人 -->
+		<result column="gmt_modified" property="updateDate" jdbcType="TIMESTAMP" />			<!-- 记录更新时间 -->
+		<result column="modify_operator_id" property="updateMan" jdbcType="VARCHAR" />			<!-- 记录更新人 -->
+	</resultMap>
+
+	<select id="listVehicle" parameterType="daily.framework.query.VehicleListQuery" resultType="daily.framework.domain.Vehicle">
+		SELECT *
+		from vehicle
+	</select>
+
+
+
+
+	<sql id="Base_Column_List">
+		vehicle_vehicle_id,vehicle_id,vehicle_number,vehicle_number_type,vehicle_type,vehicle_overall_length,app_id,vehicle_status,can_weight,can_volume,organization,
+		is_own,production_date,purchase_date,vehicle_use,org_id,org_name,cooperation_model,is_deleted,gmt_create,create_operator_id,gmt_modified,modify_operator_id</sql>
+</mapper>

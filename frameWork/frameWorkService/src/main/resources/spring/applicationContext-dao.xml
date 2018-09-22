@@ -42,11 +42,11 @@
 			</list>
 		</property>
 		<property name="dataSource" ref="dataSource" />
-		<property name="typeAliasesPackage" value="tf56.magiccube.domain" />
+		<property name="typeAliasesPackage" value="daily.framework.domain" />
 	</bean>
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="tf56.magiccube.dao" />
+		<property name="basePackage" value="daily.framework.dao" />
 		<property name="sqlSessionFactoryBeanName" value="dispatchSessionFactory"></property>
 	</bean>
 

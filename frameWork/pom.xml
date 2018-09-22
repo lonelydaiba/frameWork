@@ -313,7 +313,7 @@
     	</pluginManagement>
     </build>
 
-    <repositories>
+ <!--   <repositories>
         <repository>
             <snapshots>
                 <enabled>true</enabled>
@@ -336,17 +336,17 @@
     </repositories>
 
     <distributionManagement>
-        <!-- 快照版本 -->
+        &lt;!&ndash; 快照版本 &ndash;&gt;
         <snapshotRepository>
             <id>public-snapshots</id>
             <name>tf56 Repository</name>
             <url>http://10.7.13.128:8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
-        <!-- 发布版本 -->
+        &lt;!&ndash; 发布版本 &ndash;&gt;
         <repository>
             <id>public-releases</id>
             <name>tf56 Repository</name>
             <url>http://10.7.13.128:8081/nexus/content/repositories/thirdparty/</url>
         </repository>
-    </distributionManagement>
+    </distributionManagement>-->
 </project>

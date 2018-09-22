@@ -22,7 +22,7 @@
 	</bean>
 	
 	<!-- 自动扫描且只扫描@Controller 注册扫描的Controller -->
-	<context:component-scan base-package="tf56.magiccube" />
+	<context:component-scan base-package="daily.framework" />
 	
 	<bean id="taskExecutor"
 					 class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
@@ -34,7 +34,7 @@
 		<property name="mappingFiles" value="classpath:dozer/mapping.xml" />
 	</bean>
 
-	<bean name="dozerBeanMapperWrapper" class="tf56.magiccube.util.dozer.DozerBeanMapperWrapper">
+	<bean name="dozerBeanMapperWrapper" class="daily.framework.util.dozer.DozerBeanMapperWrapper">
 		<property name="dozerBeanMapper" ref="dozerBeanMapper" />
 	</bean>
 
