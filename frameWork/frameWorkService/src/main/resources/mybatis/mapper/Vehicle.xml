@@ -36,6 +36,6 @@
 
 
 	<sql id="Base_Column_List">
-		vehicle_vehicle_id,vehicle_id,vehicle_number,vehicle_number_type,vehicle_type,vehicle_overall_length,app_id,vehicle_status,can_weight,can_volume,organization,
+		id,vehicle_id,vehicle_number,vehicle_number_type,vehicle_type,vehicle_overall_length,app_id,vehicle_status,can_weight,can_volume,organization,
 		is_own,production_date,purchase_date,vehicle_use,org_id,org_name,cooperation_model,is_deleted,gmt_create,create_operator_id,gmt_modified,modify_operator_id</sql>
 </mapper>

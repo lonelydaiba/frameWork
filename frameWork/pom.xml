@@ -51,7 +51,7 @@
         <commons-pool2.version>2.4.2</commons-pool2.version>
 
 		<!-- mysql -->
-        <mysql.vesion>5.1.40</mysql.vesion>
+        <mysql.vesion>8.0.12</mysql.vesion>
 
 		<!-- test -->
         <junit.version>4.12</junit.version>
