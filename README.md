@@ -9,3 +9,4 @@ mybatis 3.4.1
 mysql 8.0.12
 dubbo 2.5.3
 zookeeper 3.4.6
+rocketMq  3.6.2
