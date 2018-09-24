@@ -53,6 +53,8 @@
 		<!-- mysql -->
         <mysql.vesion>8.0.12</mysql.vesion>
 
+        <!--rocketmq-->
+        <rockemq-version>3.6.2.Final</rockemq-version>
 		<!-- test -->
         <junit.version>4.12</junit.version>
         <jetty.version>8.1.10.v20130312</jetty.version>
@@ -218,6 +220,12 @@
     			<artifactId>mysql-connector-java</artifactId>
     			<version>${mysql.vesion}</version>
     		</dependency>
+
+            <dependency>
+                <groupId>com.alibaba.rocketmq</groupId>
+                <artifactId>rocketmq-client</artifactId>
+                <version>${rockemq-version}</version>
+            </dependency>
 
     		<!-- test -->
             <dependency>

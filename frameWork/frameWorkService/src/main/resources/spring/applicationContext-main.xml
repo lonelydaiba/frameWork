@@ -17,6 +17,7 @@
 			<list>
 				<value>classpath:config/application.properties</value>
 				<value>classpath:config/dubbo.properties</value>
+				<value>classpath:config/rocketmq.properties</value>
 			</list>
 		</property>
 	</bean>
