@@ -55,6 +55,8 @@
 
         <!--rocketmq-->
         <rockemq-version>3.6.2.Final</rockemq-version>
+        <!--jedis -->
+        <jedis-version>2.9.0</jedis-version>
 		<!-- test -->
         <junit.version>4.12</junit.version>
         <jetty.version>8.1.10.v20130312</jetty.version>
@@ -221,10 +223,17 @@
     			<version>${mysql.vesion}</version>
     		</dependency>
 
+            <!-- rocketmq -->
             <dependency>
                 <groupId>com.alibaba.rocketmq</groupId>
                 <artifactId>rocketmq-client</artifactId>
                 <version>${rockemq-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis-version}</version>
             </dependency>
 
     		<!-- test -->

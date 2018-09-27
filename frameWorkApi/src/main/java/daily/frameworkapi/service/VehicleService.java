@@ -30,9 +30,6 @@ public class VehicleService {
 		if (query.getPageSize() == null || query.getPageSize() <= 0) {
 			query.setPageSize(10);
 		}
-		if (query != null) {
-			throw new FrameWorkException("111");
-		}
 		return vehicleFacadeService.listVehicle(query);
 	}
 

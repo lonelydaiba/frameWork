@@ -24,7 +24,7 @@ import com.alibaba.fastjson.JSON;
  */
 public class ErrorUtils {
 
-    static final String                     ERROR_FILE = "classpath:errorCode.properties";
+    static final String                     ERROR_FILE = "classpath:config/errorCode.properties";
 
     static final Logger                     logger     = LoggerFactory.getLogger(ErrorUtils.class);
 

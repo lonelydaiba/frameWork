@@ -26,10 +26,16 @@
             <version>0.10</version>
         </dependency>
 
-		<!--rocket mq-->
+		<!--rocketmq-->
 		<dependency>
 			<groupId>com.alibaba.rocketmq</groupId>
 			<artifactId>rocketmq-client</artifactId>
+		</dependency>
+
+		<!--jedis-->
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
 		</dependency>
 
 		<!-- spring -->
